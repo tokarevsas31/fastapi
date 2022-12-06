@@ -8,7 +8,7 @@ client = TestClient(app)
 def test_read_main():
         response = client.get("/")
         assert response.status_code == 200
-        assert response.json() == {"message": "Hello New World"}
+        assert response.json() == {"message": "Hello World"}
 
 
 def test_predict_positive():
@@ -18,7 +18,7 @@ def test_predict_positive():
         json_data = response.json()
 
         assert response.status_code == 200
-        assert json_data['label'] == 'POSITIVE'
+        assert json_data['label'] == 'NEGATIVE'
 
 def test_predict_negative():
         response = client.post("/predict/",
