@@ -13,7 +13,7 @@ def test_read_main():
 
 def test_predict_positive():
         response = client.post("/predict/",
-                json={"text": "Я люблю линукс!"}
+                json={"text": "I love linux!"}
         )
         json_data = response.json()
 
@@ -22,7 +22,7 @@ def test_predict_positive():
 
 def test_predict_negative():
         response = client.post("/predict/",
-                json={"text": "Я ненавижу линукс!"}
+                json={"text": "I hate linux!"}
         )
         json_data = response.json()
 
